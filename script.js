@@ -1,5 +1,4 @@
-const API_URL = "https://vidbox-backend-7u1k.onrender.com";
-
+const API_URL = "https://vidbox-backend-7u1k.onrender.com/";
 
 document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -7,7 +6,7 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value.trim();
 
     try {
-        const response = await fetch(`${API_URL}login`, { 
+        const response = await fetch(`${API_URL}login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
@@ -48,7 +47,7 @@ async function checkAuth() {
     }
 
     try {
-        const response = await fetch(`${API_URL}testAuthPage`, { 
+        const response = await fetch(`${API_URL}testAuthPage`, {
             method: "GET",
             headers: { "Authorization": `Bearer ${token}` }
         });
@@ -67,12 +66,13 @@ async function checkAuth() {
     }
 }
 
+
 document.getElementById("logoutBtn")?.addEventListener("click", async () => {
     const token = localStorage.getItem("accessToken");
     if (!token) return;
 
     try {
-        await fetch(`${API_URL}logout`, { 
+        await fetch(`${API_URL}logout`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,
