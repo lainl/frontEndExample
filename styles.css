@@ -1,36 +1,114 @@
-body {
+/* Color Palette
+   #588061
+   #869F77
+   #FDE9EA
+   #F9E0DB
+   #E7B5AC
+*/
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Simple sans-serif font for the body */
+  body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 50px;
-}
-
-.container {
-    background: white;
-    padding: 20px;
+    background-color: #FDE9EA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Container for forms and pages */
+  .container {
+    background-color: #F9E0DB;
+    padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-}
-
-input, button {
+    width: 400px; /* Slightly wider to fit the video player */
+    text-align: center;
+  }
+  
+  /* Headings */
+  h1, h2 {
+    margin-bottom: 1rem;
+    color: #588061;
+  }
+  
+  /* Paragraphs, etc. */
+  p {
+    margin-bottom: 0.75rem;
+    color: #588061;
+  }
+  
+  /* Form groups */
+  .form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+  }
+  
+  label {
     display: block;
+    margin-bottom: 0.5rem;
+    color: #588061;
+  }
+  
+  /* Inputs */
+  input[type="text"],
+  input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-button {
-    background-color: #28a745;
-    color: white;
+    padding: 0.5rem;
+    border: 1px solid #869F77;
+    border-radius: 6px;
+    background-color: #E7B5AC;
+    color: #588061;
+    font-size: 1rem;
+  }
+  
+  /* Rounded rectangle button */
+  button {
+    width: 100%;
+    padding: 0.75rem;
     border: none;
+    border-radius: 20px;
+    background-color: #588061;
+    color: #FDE9EA;
+    font-size: 1rem;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.error {
-    color: red;
-}
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #869F77;
+  }
+  
+  /* Links for video titles */
+  a {
+    color: #588061;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: inline-block;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Message display on login page */
+  #message {
+    margin-top: 1rem;
+    text-align: center;
+    color: #588061;
+  }
+  
+  /* Video player styling */
+  #videoPlayer {
+    margin-top: 1rem;
+    background-color: #000; /* so the video area is visible even if no stream */
+  }
+  
