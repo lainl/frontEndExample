@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const metadataUrl = `http://localhost:3000/video/${videoId}`;
+    const metadataUrl = `https://vidbox-backend-7u1k.onrender.com/video/${videoId}`;
     console.log(`Fetching video metadata from: ${metadataUrl}`);
 
     const response = await fetch(metadataUrl);
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     videoInfoDiv.innerHTML = `<h2>${videoData.title || 'Untitled Video'}</h2>`;
 
-    const streamUrl = `http://localhost:3000/video/stream/${videoId}`;
+    const streamUrl = `https://vidbox-backend-7u1k.onrender.com/video/stream/${videoId}`;
     console.log(`Constructed stream URL: ${streamUrl}`);
 
     videoPlayer.src = streamUrl;

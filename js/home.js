@@ -1,5 +1,4 @@
-const USER_ENDPOINT = 'http://localhost:3000/user';
-const LOGOUT_ENDPOINT = 'http://localhost:3000/logout';
+const BASE_URL = 'https://vidbox-backend-7u1k.onrender.com';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const userInfoDiv = document.getElementById('userInfo');
@@ -7,13 +6,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   const logoutButton = document.getElementById('logoutButton');
 
   const userid = localStorage.getItem('userid');
+  if (!userid) {
+    userInfoDiv.textContent = 'User ID not found. Please log in.';
+    return;
+  }
+
   try {
-    const userResponse = await fetch(`${USER_ENDPOINT}/${userid}`);
+    const userResponse = await fetch(`${BASE_URL}/user/${userid}`);
     if (!userResponse.ok) {
       throw new Error('Failed to fetch user data');
     }
     const userData = await userResponse.json();
-    
+
     userInfoDiv.innerHTML = `
       <p><strong>Username:</strong> ${userData.username}</p>
       <p><strong>Email:</strong> ${userData.email}</p>
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       for (const videoId of userData.videoIds) {
         try {
-          const videoResponse = await fetch(`http://localhost:3000/video/${videoId}`);
+          const videoResponse = await fetch(`${BASE_URL}/video/${videoId}`);
           if (videoResponse.ok) {
             const videoData = await videoResponse.json();
             const videoLink = document.createElement('a');
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const refreshToken = localStorage.getItem('refreshToken');
 
     try {
-      const response = await fetch(LOGOUT_ENDPOINT, {
+      const response = await fetch(`${BASE_URL}/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ accessToken, refreshToken })

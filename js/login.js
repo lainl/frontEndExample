@@ -1,5 +1,5 @@
 
-const LOGIN_ENDPOINT = 'http://localhost:3000/login';
+const LOGIN_ENDPOINT = 'https://vidbox-backend-7u1k.onrender.com/login';
 
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');

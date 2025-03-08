@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       try {
-        const response = await fetch('http://localhost:3000/video/upload', {
+        const response = await fetch('https://vidbox-backend-7u1k.onrender.com/video/upload', {
           method: 'POST',
           body: formData
         });
