@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.ok) {
           
           alert('Video uploaded successfully!');
-          window.location.href = './html/index.html';
+          window.location.href = './home.html';
         } else {
           const errorData = await response.json();
           messageDiv.textContent = errorData.error || 'Upload failed';
