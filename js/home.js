@@ -76,4 +76,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       alert('An error occurred while logging out. Please try again.');
     }
   });
+
+  
 });

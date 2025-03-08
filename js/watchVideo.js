@@ -47,6 +47,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   backButton.addEventListener('click', () => {
-    window.location.href = './html/home.html';
+    window.location.href = './home.html';
   });
 });
